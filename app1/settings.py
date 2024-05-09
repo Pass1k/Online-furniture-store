@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.postgres',
 
     "debug_toolbar",
 
@@ -84,10 +85,15 @@ WSGI_APPLICATION = 'app1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'home',
+        'USER': 'home',
+        'PASSWORD': 'home',
+        'HOST': 'localhost',  # Or another host
+        'PORT': '5432',       # Default PostgreSQL port
     }
 }
+
 
 
 # Password validation
